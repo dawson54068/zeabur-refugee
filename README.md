@@ -28,7 +28,7 @@ https://github.com/dawson54068/zeabur-refugee
 
 請先做這件事：
 1. 先判斷金鑰是否可能外洩；如果可能，先帶我關自動儲值、截圖存證、撤銷或停用舊金鑰。
-2. 如果我有很多 Zeabur 專案，請不要叫我一個一個點；請照 references/bulk-audit.md 用 CLI/API 做總盤點。
+2. 如果我有很多 Zeabur 專案，請不要叫我一個一個點；請照 references/bulk-audit.md 使用 Zeabur 官方 CLI/API 做總盤點（`npx zeabur@latest auth login`、`project ls`、`service ls`、`variable list`、`project export`）。
 3. 如果有 live database，請照 references/db-migration.md 走「演練 → 暫停寫入 → 最後一次備份 → 驗證 → 保留 7 天」流程，不要只做一次 dump。
 4. 推薦平台時，請讀對應的 references/targets/*.md，並附官方來源連結證明價格與限制。
 5. 不要要求我把 API key、資料庫密碼、.env 內容貼到對話裡；需要輸入金鑰時，請用本機檔案或 CLI 的隱藏輸入方式。
@@ -73,7 +73,7 @@ git clone https://github.com/dawson54068/zeabur-refugee ~/.claude/skills/zeabur-
 ## 它會做什麼
 
 1. **先止血**：關掉各家的自動儲值（偷到的金鑰配上自動儲值就是無上限提款）、把用量截圖存證（之後向 Zeabur 申請補償要用）、撤銷外洩金鑰。附 10 家 LLM 供應商加上 AWS / Stripe / GitHub / Telegram / Discord 的正確後台連結。
-2. **大量專案快速盤點**：30 個專案，不用搬 30 次。CLI/API 一次掃完、產出一張分類表；金鑰照「供應商」輪替（幾家就跑幾次）；廢棄專案直接刪掉就不用管了，只搬還活著的。
+2. **大量專案快速盤點**：30 個專案，不用搬 30 次。用 Zeabur 官方 CLI/API 一次掃完（`project ls`、`service ls`、`variable list`、`project export`）、產出一張分類表；金鑰照「供應商」輪替（幾家就跑幾次）；廢棄專案直接刪掉就不用管了，只搬還活著的。
 3. **選擇合適的新家**：決策表加上各平台指南（Railway、Coolify/Dokploy VPS、Render、Fly.io、Cloudflare、Vercel），價格與限制逐條附官方來源連結（2026-08-29 查核）。
 4. **資料庫不掉資料**：還在線上服務的資料庫走「演練 → 凍結寫入 → 最終備份 → 驗證 → 保留 7 天隨時可退回」的流程搬，不是 dump 一次就了事。
 5. **安全下線**：新平台驗證通過之前，Zeabur 上的東西一律不動；金鑰從頭到尾不會出現在對話裡。
