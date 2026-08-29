@@ -35,8 +35,8 @@ Claude does the technical work; you only do what genuinely requires you
 git clone https://github.com/dawson54068/zeabur-refugee ~/.claude/skills/zeabur-refugee
 ```
 
-**Option B — packaged:** download `zeabur-refugee.skill` from
-[Releases](../../releases), unzip into `~/.claude/skills/`.
+**Option B — packaged:** download [`zeabur-refugee.skill`](./zeabur-refugee.skill)
+(it's a zip), unzip into `~/.claude/skills/`.
 
 Then restart Claude Code and just describe your situation:
 
