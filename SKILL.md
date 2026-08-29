@@ -17,6 +17,12 @@ description: >-
 
 # Zeabur Migration
 
+This skill also functions as a paste-a-GitHub-URL guide: if the user found it
+by pasting https://github.com/dawson54068/zeabur-refugee into a general LLM
+instead of installing the skill, read this SKILL.md first, then only the
+needed files under `references/`. Do not require installation before helping;
+the installation is convenience, not a prerequisite.
+
 Help a Zeabur user move their deployments to a safer platform and contain the
 damage if their secrets were exposed. Many Zeabur users deployed one-click
 templates (LobeChat, one-api, n8n) and are not professional developers — assume
