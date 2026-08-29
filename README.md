@@ -28,7 +28,7 @@ https://github.com/dawson54068/zeabur-refugee
 
 請先做這件事：
 1. 先判斷金鑰是否可能外洩；如果可能，先帶我關自動儲值、截圖存證、撤銷或停用舊金鑰。
-2. 如果我有很多 Zeabur 專案，請不要叫我一個一個點；請照 references/bulk-audit.md 使用 Zeabur 官方 CLI/API 做總盤點（`npx zeabur@latest auth login`、`project ls`、`service ls`、`variable list`、`project export`）。
+2. 如果我有很多 Zeabur 專案，請不要叫我一個一個點；請照 references/bulk-audit.md 與 references/zeabur-official-tools.md 使用 Zeabur 官方 CLI/API 做總盤點（`npx zeabur@latest auth login`、`project ls`、`service ls`、`variable list`、`project export`）。
 3. 如果有 live database，請照 references/db-migration.md 走「演練 → 暫停寫入 → 最後一次備份 → 驗證 → 保留 7 天」流程，不要只做一次 dump。
 4. 推薦平台時，請讀對應的 references/targets/*.md，並附官方來源連結證明價格與限制。
 5. 不要要求我把 API key、資料庫密碼、.env 內容貼到對話裡；需要輸入金鑰時，請用本機檔案或 CLI 的隱藏輸入方式。
@@ -58,7 +58,7 @@ git clone https://github.com/dawson54068/zeabur-refugee ~/.claude/skills/zeabur-
 1. **先讀 `SKILL.md`。** 它是總流程：Phase 0 止血、Phase 1 盤點、Phase 2 選平台、Phase 3 搬家、Phase 4 下線。
 2. **不要一次讀完整 repo。** 依情境讀參考檔：
    - 任何金鑰可能外洩：讀 `references/key-rotation.md`。
-   - 使用者有 10 個以上 Zeabur 專案：讀 `references/bulk-audit.md`。
+   - 使用者有 10 個以上 Zeabur 專案：讀 `references/bulk-audit.md` 和 `references/zeabur-official-tools.md`。
    - 要匯出 Zeabur 專案、環境變數、資料庫、volume：讀 `references/zeabur-export.md`。
    - 有 live database：讀 `references/db-migration.md`。
    - 選定平台後，只讀對應的 `references/targets/*.md`。
@@ -85,9 +85,16 @@ git clone https://github.com/dawson54068/zeabur-refugee ~/.claude/skills/zeabur-
 | `SKILL.md` | 總流程入口 |
 | `references/key-rotation.md` | 金鑰、token、DB 密碼可能外洩時 |
 | `references/bulk-audit.md` | 10 個以上 Zeabur 專案要快速盤點時 |
+| `references/zeabur-official-tools.md` | Zeabur 網站很慢時：用官方 CLI/API/GraphQL/schema host 盤點 |
 | `references/zeabur-export.md` | 匯出 Zeabur env vars、資料庫、volume、domain 設定時 |
 | `references/db-migration.md` | 有 live database，不能掉資料時 |
 | `references/targets/*.md` | 選平台後讀對應檔案：Railway / Render / Fly / Cloudflare / Vercel / self-host |
+
+## 開源與貢獻
+
+- 授權：MIT，見 [`LICENSE`](./LICENSE)。
+- 想修正內容或新增平台指南：見 [`CONTRIBUTING.md`](./CONTRIBUTING.md)。
+- 發現安全問題：請照 [`SECURITY.md`](./SECURITY.md) 私下回報，不要把漏洞細節或任何金鑰貼到公開 issue。
 
 ## 備註
 

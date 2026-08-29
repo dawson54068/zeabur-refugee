@@ -77,12 +77,13 @@ Read [references/zeabur-export.md](references/zeabur-export.md) for how to get
 data out of Zeabur (dashboard paths, CLI, API, database dumps).
 
 **More than a handful of projects?** Read
-[references/bulk-audit.md](references/bulk-audit.md) first and run the sweep
-yourself instead of walking the dashboard together: one CLI/API pass over
-every project, one inventory table, then rotate per *provider* (not per
-project), delete the dead projects outright, and migrate only what's alive.
-Thirty projects is usually one sweep + a handful of console visits + a few
-real migrations — not thirty migrations.
+[references/bulk-audit.md](references/bulk-audit.md) and
+[references/zeabur-official-tools.md](references/zeabur-official-tools.md)
+first, then run the sweep yourself instead of walking the dashboard together:
+one CLI/API pass over every project, one inventory table, then rotate per
+*provider* (not per project), delete the dead projects outright, and migrate
+only what's alive. Thirty projects is usually one sweep + a handful of
+console visits + a few real migrations — not thirty migrations.
 
 Build a small table with the user and keep it updated through the migration:
 
@@ -232,5 +233,6 @@ then update the user with the corrected path.
 | references/key-rotation.md | Any chance secrets were exposed (Phase 0/0.5) |
 | references/zeabur-export.md | Inventorying or exporting anything from Zeabur (Phase 1/3) |
 | references/bulk-audit.md | The user has many projects (10+) — sweep and triage before anything else |
+| references/zeabur-official-tools.md | Zeabur dashboard is slow or many projects need official CLI/API inspection |
 | references/db-migration.md | Any database with live traffic is moving (Phase 3) — the no-data-loss procedure |
 | references/targets/*.md | A target platform is chosen (Phase 2/3) — only the chosen one |
