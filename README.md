@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="zeabur-refugee logo：一個人帶著包袱離開故障主機、往安全方向移動" width="160">
+</p>
+
 # zeabur-refugee
 
 給 Zeabur 受災戶的 [Claude Code](https://claude.com/claude-code) skill，也可以當成「不用安裝、直接貼給 AI 助手看的搬家手冊」。
@@ -103,6 +107,10 @@ git clone https://github.com/dawson54068/zeabur-refugee ~/.claude/skills/zeabur-
 - 與 Zeabur 官方無關。事件描述皆引自 Zeabur 官方狀態頁與媒體報導。
 
 ---
+
+## Logo
+
+`assets/logo.png` 是本專案原創圖示：一個人帶著包袱離開故障主機、往安全方向移動。它不是 Zeabur 官方圖示，也沒有使用 Zeabur 商標或外部素材；跟 repo 其餘內容一起以 MIT 授權釋出。
 
 ## English
 
