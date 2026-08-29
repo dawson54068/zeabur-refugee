@@ -1,0 +1,44 @@
+{
+  "skill_name": "zeabur-refugee",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I got an email that zeabur was hacked and my API keys might be leaked?? I have LobeChat deployed there from the one-click template with my OpenAI and Anthropic keys in the env vars. what do I do? I'm not a programmer, please help",
+      "expected_output": "Leads with key rotation, not migration: exact console URLs to check OpenAI/Anthropic usage for abuse, create new keys, revoke old ones. Plain language, one step at a time. Then proposes a concrete new home for LobeChat (Railway template or Coolify VPS) with cost, and offers to do the technical work. Never asks the user to paste key values into chat.",
+      "files": [],
+      "assertions": [
+        "rotation-first: key revocation/rotation is addressed before or ahead of any platform-migration steps, not after",
+        "abuse-check: tells the user to check OpenAI and Anthropic usage/billing pages for signs of abuse, with URLs",
+        "no-secrets-in-chat: never asks the user to paste API key values into the chat/conversation",
+        "viable-lobechat-target: the recommended destination can actually run LobeChat as a container/template (Railway, Render, Fly.io, Coolify/VPS) - NOT Vercel or Cloudflare Workers as the primary recommendation",
+        "compensation-path: mentions capturing evidence of abuse and/or Zeabur's compensation/support channel (zeabur.com/support)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "help me move my next.js app off zeabur. it has a zeabur postgres database and a custom domain (myapp.tw). budget is basically zero. the app is in ~/code/myapp",
+      "expected_output": "Asks/decides commercial vs personal (Vercel Hobby restriction), recommends Cloudflare or Vercel for the app and Neon/Railway for Postgres with current free-tier facts. Concrete plan: pg_dump from Zeabur, restore to new DB, deploy, set env vars via CLI without echoing values, verify before DNS cutover, rotate DATABASE_URL and any API keys, decommission Zeabur last with explicit confirmation.",
+      "files": [],
+      "assertions": [
+        "vercel-hobby-commercial-flagged: if Vercel free tier is recommended or considered, its non-commercial-use restriction is mentioned or the commercial question is asked",
+        "postgres-real-home: Postgres gets a genuine Postgres destination (Neon, Railway, Supabase, etc.) with pg_dump/restore steps taken BEFORE Zeabur teardown",
+        "verify-before-cutover: the plan deploys and verifies the new platform before DNS cutover and before deleting anything on Zeabur",
+        "credentials-rotated: the plan treats the Zeabur-era DATABASE_URL/secrets as compromised - new credentials on the new platform, old ones not reused",
+        "dns-user-step: moving myapp.tw includes explicit registrar DNS record changes as a user-performed step with the records to set"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "i run a telegram bot (python, has a Dockerfile) on zeabur with a redis service attached. zeabur got breached so i need it somewhere else today. i can pay a few bucks a month",
+      "expected_output": "Recommends a container host (Railway or Fly.io) with realistic monthly cost, Redis replacement (Railway Redis or Upstash), and — critically — rotates the Telegram bot token via BotFather /revoke plus any other env secrets. Deploys and verifies the bot responds before deleting anything on Zeabur.",
+      "files": [],
+      "assertions": [
+        "container-host: primary recommendation is a real container host for a long-running process (Railway, Fly.io, Render paid, or a VPS) - not Vercel or Cloudflare Workers",
+        "botfather-rotation: the Telegram bot token is rotated via BotFather revoke as part of the plan",
+        "redis-addressed: the Redis service gets an explicit plan (managed replacement like Railway/Upstash, or a stated decision that cache data can be dropped)",
+        "verify-before-teardown: the bot is verified working on the new platform before Zeabur services are deleted",
+        "realistic-cost: a concrete monthly cost estimate is given and is consistent with a-few-dollars-a-month (roughly $5-15/mo)"
+      ]
+    }
+  ]
+}
